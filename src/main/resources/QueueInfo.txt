@@ -1,0 +1,7 @@
+awslocal sqs create-queue --queue-name aws-spring-sqs-demo-inbound-queue
+awslocal sqs create-queue --queue-name aws-spring-sqs-demo-outbound-queue
+awslocal sqs list-queues
+"http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/aws-spring-sqs-demo-inbound-queue",
+"http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/aws-spring-sqs-demo-outbound-queue"
+
+awslocal sqs receive-message --queue-url http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/aws-spring-sqs-demo-outbound-queue
